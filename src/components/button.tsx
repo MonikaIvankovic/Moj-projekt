@@ -4,6 +4,6 @@ type ButtonProps = {
 };
 
 const Button = ({ text, color = "green" }: ButtonProps) => {
-  return <button className={`btn ${color}`}>{text}</button>;
+  return <button className={`btn btn--${color}`}>{text}</button>;
 };
 export default Button;

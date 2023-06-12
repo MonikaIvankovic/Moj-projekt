@@ -1,0 +1,40 @@
+.input {
+  width: 100%;
+  padding: 0.75rem 1.25rem;
+
+  border-radius: var(--border-rounded);
+  border: 1px solid var(--color-gray-300);
+  transition: all 250ms ease-in-out;
+
+  &:focus-visible {
+    outline: none;
+    border-color: var(--color-gray-300);
+  }
+  &__wrapper {
+    position: relative;
+    max-width: 17.5rem;
+    &--size {
+      &--sm {
+        max-width: 13rem;
+      }
+      &--md {
+        max-width: 17.5rem;
+      }
+      &--lg {
+        max-width: 25rem;
+      }
+    }
+  }
+  &--hasIcon {
+    padding-right: 2.25rem;
+  }
+  &__icon {
+    display: flex;
+    position: absolute;
+    right: 0.625rem;
+    top: 50%;
+    svg {
+      transform: translateY(-50%);
+    }
+  }
+}
