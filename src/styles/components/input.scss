@@ -10,6 +10,11 @@
     outline: none;
     border-color: var(--color-gray-300);
   }
+
+  &:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
   &__wrapper {
     position: relative;
     max-width: 17.5rem;

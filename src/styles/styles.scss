@@ -1,5 +1,8 @@
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&display=swap");
 * {
   box-sizing: border-box;
+  font-family: "Dancing Script", cursive;
+  font-size: 1.5rem;
 }
 body {
   margin: 0;
@@ -12,6 +15,7 @@ body {
   --color-green-500: #27ae60;
   --color-blue-500: #3498db;
   --color-gray-300: gray;
+  --color-brown-500: #a67b5b;
 
   //border
   --border-rounded: 0.5rem;
@@ -22,3 +26,4 @@ body {
 @import "./components/devider.scss";
 @import "./components/container.scss";
 @import "./components/input.scss";
+@import "./components/sidebar.scss";

@@ -1,0 +1,14 @@
+.sidebar {
+  position: fixed;
+  top: 6rem;
+  left: -20rem;
+  background-color: var(--color-brown-500);
+  color: var(--color-white);
+  height: calc(100vh - 7rem);
+  width: 17rem;
+  border-radius: var(--border-rounded);
+  transition: 250ms ease-in-out;
+  &.isActive {
+    left: 1rem;
+  }
+}

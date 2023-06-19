@@ -1,19 +1,23 @@
-import IconDownload from "./assets/icons/download";
-import Button from "./components/button";
-import Container from "./components/container";
-import Devider from "./components/devider";
-import Input from "./components/input";
+import { Route, Routes } from "react-router-dom";
+import Layout from "./components/layout";
+import Home from "./features/home/home/home";
+import NoMatch from "./features/home/no-match/no-match";
 import "./styles/styles.scss";
+import Contact from "./features/home/contact/contact";
+import ProgressBar from "./features/home/progress bar/progressbar";
 function App() {
   return (
-    <Container>
-      <h1>Hello World!</h1>
-      <Button color="green" text="Click me" />
-      <Devider marginBottom="md" marginTop="md" />
-      <h1>Neki naslov</h1>
-      <div>neki text</div>
-      <Input placeholder="name" size="sm" icon={<IconDownload />} />
-    </Container>
+    <Routes>
+      <Route path="/" element={<Layout />}>
+        <Route index element={<Home />} />
+        <Route path="contact" element={<Contact />} />
+        <Route path="progressbar" element={<ProgressBar />} />
+        {/* Using path="*"" means "match anything", so this route
+                acts like a catch-all for URLs that we don't have explicit
+                routes for. */}
+        <Route path="*" element={<NoMatch />} />
+      </Route>
+    </Routes>
   );
 }
 
