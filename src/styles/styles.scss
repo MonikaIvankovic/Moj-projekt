@@ -15,6 +15,7 @@ body {
   --color-green-500: #27ae60;
   --color-blue-500: #3498db;
   --color-gray-300: gray;
+  --color-gray-200: rgb(177, 172, 172);
   --color-brown-500: #a67b5b;
 
   //border
@@ -27,3 +28,4 @@ body {
 @import "./components/container.scss";
 @import "./components/input.scss";
 @import "./components/sidebar.scss";
+@import "./components/progressbar.scss";

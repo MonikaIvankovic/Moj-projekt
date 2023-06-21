@@ -1,0 +1,15 @@
+.progressbar {
+  margin-top: 5rem;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  &__wrapper {
+    width: 70%;
+    display: flex;
+    justify-content: space-between;
+  }
+}
+#progress {
+  width: 70%;
+  height: 2.5rem;
+}

@@ -15,6 +15,9 @@ const Header = ({ toggleSidebar }: HeaderProps) => {
           <NavLink className="header__nav__link" to="/contact">
             Contact
           </NavLink>
+          <NavLink className="header__nav__link" to="/progressbar">
+            Progress Bar
+          </NavLink>
         </header>
       </div>
     </>

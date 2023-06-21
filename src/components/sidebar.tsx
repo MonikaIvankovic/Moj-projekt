@@ -21,7 +21,7 @@ const linkList: LinkType[] = [
 const SideBar = ({ isOpen, onClose }: SideBarProps) => {
   return (
     <>
-      <div className={` "sidebar" ${isOpen ? "isActive" : ""}`}>Sidebar</div>
+      <div className={` "sidebar" ${isOpen ? "isActive" : ""}`}></div>
       {linkList.map((link) => {
         return (
           <NavLink
