@@ -1,0 +1,29 @@
+.header {
+  display: flex;
+  flex-grow: 1;
+  justify-content: space-around;
+  max-width: 64rem;
+  &__wrapper {
+    border-bottom: 1px solid gray;
+    display: flex;
+    justify-content: center;
+  }
+  &__logo {
+    & img {
+      width: 2rem;
+    }
+  }
+  &__nav {
+    margin-top: 0.5rem;
+    &__link {
+      position: relative;
+      font-size: 1.5rem;
+      text-decoration: none;
+    }
+    &__url {
+      margin-left: 1rem;
+      text-decoration: none;
+      color: gray;
+    }
+  }
+}

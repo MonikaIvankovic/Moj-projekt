@@ -1,23 +1,30 @@
 import { NavLink } from "react-router-dom";
-
-type HeaderProps = {
-  toggleSidebar: () => void;
-};
-const Header = ({ toggleSidebar }: HeaderProps) => {
+import teddybear from "../assets/icons/teddy-bear.png";
+const Header = () => {
   return (
     <>
       <div className="header__wrapper">
         <header className="header">
-          <img src="" alt="" />
-          <NavLink className="header__nav__link" to="/">
-            Home
-          </NavLink>
-          <NavLink className="header__nav__link" to="/contact">
-            Contact
-          </NavLink>
-          <NavLink className="header__nav__link" to="/progressbar">
-            Progress Bar
-          </NavLink>
+          <div className="header__logo">
+            <img src={teddybear} alt="" />
+          </div>
+          <nav className="header__nav">
+            <NavLink className="header__nav__url" to="/">
+              Home
+            </NavLink>
+            <NavLink className="header__nav__url" to="/contact">
+              Contact
+            </NavLink>
+            <NavLink className="header__nav__url" to="/progressbar">
+              Progress Bar
+            </NavLink>
+            <NavLink className="header__nav__url" to="/loaderpage">
+              Loader Page
+            </NavLink>
+            <NavLink className="header__nav__url" to="/selectpage">
+              Select Page
+            </NavLink>
+          </nav>
         </header>
       </div>
     </>

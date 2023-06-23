@@ -7,9 +7,8 @@ const ProgressBar = () => {
   const increaseLength = () => {
     if (currentLength < 100) {
       setCurrentLength(currentLength + 5);
-    } else if (currentLength >= 90 && currentLength < 100) {
+    } else if (currentLength === 100) {
       setCurrentLength(100);
-    } else {
       alert("Dostigao si maximum");
     }
   };
@@ -17,9 +16,8 @@ const ProgressBar = () => {
   const decreaseLength = () => {
     if (currentLength > 0) {
       setCurrentLength(currentLength - 5);
-    } else if (currentLength > 0 && currentLength <= 1) {
+    } else if (currentLength === 0) {
       setCurrentLength(0);
-    } else {
       alert("Dostigao si minimum");
     }
   };
@@ -32,10 +30,18 @@ const ProgressBar = () => {
         <progress id="progress" value={currentLength} max="100"></progress>
         <br />
         <div className="progressbar__wrapper">
-          <button className="btn" onClick={decreaseLength}>
+          <button
+            className="btn"
+            onClick={decreaseLength}
+            disabled={currentLength <= 0}
+          >
             -
           </button>
-          <button className="btn" onClick={increaseLength}>
+          <button
+            className="btn"
+            onClick={increaseLength}
+            disabled={currentLength >= 100}
+          >
             +
           </button>
         </div>
