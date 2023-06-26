@@ -8,6 +8,7 @@ import ProgressBar from "./features/home/progress bar/progressbar";
 
 import LoaderPage from "./features/home/loader/loaderpage";
 import SelectPage from "./features/home/select/selectpage";
+import Animals from "./features/home/animals/animals";
 function App() {
   return (
     <Routes>
@@ -17,6 +18,7 @@ function App() {
         <Route path="progressbar" element={<ProgressBar />} />
         <Route path="loaderpage" element={<LoaderPage />} />
         <Route path="selectpage" element={<SelectPage />} />
+        <Route path="animals" element={<Animals />} />
         {/* Using path="*"" means "match anything", so this route
                 acts like a catch-all for URLs that we don't have explicit
                 routes for. */}

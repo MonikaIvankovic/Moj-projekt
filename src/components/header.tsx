@@ -24,6 +24,9 @@ const Header = () => {
             <NavLink className="header__nav__url" to="/selectpage">
               Select Page
             </NavLink>
+            <NavLink className="header__nav__url" to="/animals">
+              Animals
+            </NavLink>
           </nav>
         </header>
       </div>
