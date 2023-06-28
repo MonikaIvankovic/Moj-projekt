@@ -19,6 +19,12 @@ function App() {
         <Route path="loaderpage" element={<LoaderPage />} />
         <Route path="selectpage" element={<SelectPage />} />
         <Route path="animals" element={<Animals />} />
+        <Route path="animals/new" element={<>Došli ste na novi page</>} />
+        <Route
+          path="animals/:animalID"
+          element={<>Došli ste na stranicu neke životinje</>}
+        />
+
         {/* Using path="*"" means "match anything", so this route
                 acts like a catch-all for URLs that we don't have explicit
                 routes for. */}

@@ -3,6 +3,7 @@ import Container from "../../../components/container";
 import AnimalCard from "./animal-card";
 import Loader from "../../../components/loader";
 import Pagination from "../../../components/pagination";
+import FloatingButton from "../../../components/floating-button";
 export type AnimalsType = {
   name: string;
   species: string;
@@ -12,11 +13,11 @@ export type AnimalsType = {
 };
 const rpp = 8;
 const noOfItems = 20;
-const numOfPages = Math.ceil(20 / 8);
+const numOfPages = Math.ceil(noOfItems / rpp);
 
 const Animals = () => {
   const [animalsData, setAnimalsData] = useState<AnimalsType[]>([]);
-  const [loading, setLoading] = useState<Boolean>(true);
+
   const [page, setPage] = useState<number>(1);
   const getAnimalsData = () => {
     //uzimanje posataka sa servera
@@ -27,7 +28,6 @@ const Animals = () => {
         console.log(data);
         setTimeout(() => {
           setAnimalsData(data);
-          setLoading(false);
         });
       })
       //ispisivanje errora u slucaju da nesto ne valja
@@ -39,14 +39,18 @@ const Animals = () => {
   }, []);
   return (
     <Container>
-      <Loader isActive={loading}></Loader>
       <h1>Animals</h1>
       <div className="grid grid--primary">
         {animalsData.map((animal) => {
           return <AnimalCard animal={animal} />;
         })}
       </div>
-      <Pagination />
+      <Pagination
+        activePage={page}
+        numberOfPages={numOfPages}
+        onPaginate={(activePage) => setPage(activePage)}
+      />
+      <FloatingButton />
     </Container>
   );
 };

@@ -3,6 +3,7 @@
   align-items: center;
   margin-bottom: 2rem;
   justify-content: center;
+  color: black;
   &__item {
     cursor: pointer;
     background-color: var(--color-gray-300);
@@ -20,6 +21,11 @@
     }
     &.isActive {
       background-color: var(--color-brown-500);
+    }
+    &.isDisabled {
+      opacity: 0.5;
+      pointer-events: none;
+      user-select: none;
     }
   }
 }
