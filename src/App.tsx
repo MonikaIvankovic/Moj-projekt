@@ -9,6 +9,8 @@ import ProgressBar from "./features/home/progress bar/progressbar";
 import LoaderPage from "./features/home/loader/loaderpage";
 import SelectPage from "./features/home/select/selectpage";
 import Animals from "./features/home/animals/animals";
+import AnimalCreate from "./features/home/animals/animal-create";
+import { v4 as uuidv4 } from "uuid";
 function App() {
   return (
     <Routes>
@@ -19,7 +21,7 @@ function App() {
         <Route path="loaderpage" element={<LoaderPage />} />
         <Route path="selectpage" element={<SelectPage />} />
         <Route path="animals" element={<Animals />} />
-        <Route path="animals/new" element={<>Došli ste na novi page</>} />
+        <Route path="animals/new" element={<AnimalCreate />} />
         <Route
           path="animals/:animalID"
           element={<>Došli ste na stranicu neke životinje</>}

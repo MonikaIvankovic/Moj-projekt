@@ -1,34 +1,34 @@
-import Loader from "../../../components/loader";
-import Container from "../../../components/container";
 import { useState } from "react";
+import Container from "../../../components/container";
+import Devider from "../../../components/devider";
+import Loader from "../../../components/loader";
+import Button from "../../../components/button";
 
 const LoaderPage = () => {
-  const [isLoading, setIsLoading] = useState(false);
-  const [isContentVisible, setIsContentVisible] = useState(false);
-  const handleClick = () => {
-    setIsLoading(true);
+  const [loading, setLoading] = useState<boolean>(false);
 
-    // Simulating an asynchronous task
-
+  const handleLoader = () => {
+    setLoading(true);
     setTimeout(() => {
-      setIsLoading(false);
-      setIsContentVisible(true);
+      setLoading(false);
     }, 2000);
   };
+
   return (
     <Container>
-      {" "}
-      <div className="loader__wrapper">
-        <button className="btn" onClick={handleClick}>
-          Load Content
-        </button>
-        {isLoading && <Loader />}
-        <div style={{ display: isContentVisible ? "block" : "none" }}>
-          {!isLoading && <h1>Content Loaded!</h1>}
-          {/* Add your content here */}
-        </div>
-      </div>
+      <h1>Loader</h1>
+      <Devider />
+      <p className="type--san-serif type--lg">
+        Loader komponentu kontroliramo kroz "isActive" prop, a izgled loadera
+        možemo mjenjati preko "text" propa. Ako u text prop prosljedimo string,
+        on će se prikazati kao loader, u slucaju da ne prosljedimo ništa, u
+        loader će se učitati defaultni izgled spinnera. Kako bi upalili i
+        isprobali spinner, stisni button ispod.
+      </p>
+      <Loader isActive={loading} />
+      <Button onClick={() => handleLoader()} text="Turn on the loader" />
     </Container>
   );
 };
+
 export default LoaderPage;

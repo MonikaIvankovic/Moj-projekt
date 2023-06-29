@@ -16,7 +16,7 @@ const Pagination = ({
     <div className="pagination">
       <span
         onClick={() => onPaginate(activePage - 1)}
-        className={`pagination__item ${activePage === 1 ? "isDisable" : ""} `}
+        className={`pagination__item ${activePage <= 1 ? "isDisabled" : ""}`}
       >
         <IconChevronLeft />
       </span>
@@ -28,7 +28,7 @@ const Pagination = ({
               key={index}
               onClick={() => onPaginate(index + 1)}
               className={`pagination__item ${
-                activePage === index + 1 ? "isActive" : " "
+                activePage === index + 1 ? "isActive" : ""
               }`}
             >
               {index + 1}
@@ -38,8 +38,8 @@ const Pagination = ({
       <span
         onClick={() => onPaginate(activePage + 1)}
         className={`pagination__item ${
-          activePage >= numberOfPages ? "isDisable" : ""
-        } `}
+          activePage >= numberOfPages ? "isDisabled" : ""
+        }`}
       >
         <IconChevronRight />
       </span>

@@ -1,33 +1,37 @@
 import { ReactNode } from "react";
-import IconNotification from "../assets/icons/notifitacion";
 
 type InputProps = {
   placeholder?: string;
   icon?: ReactNode;
   size?: "sm" | "md" | "lg";
+  value: string;
+  onChange: (value: string) => void;
   disabled?: boolean;
+  name?: string;
 };
+
 const Input = ({
   placeholder = "",
   icon,
   size = "md",
+  value,
+  onChange,
   disabled = false,
+  name,
 }: InputProps) => {
   return (
-    <div
-      className={`input__wrapper input__wrapper--size--${size}
-     
-     `}
-    >
-      <div className="input__icon">{icon}</div>
+    <div className="input__wrapper">
       <input
-        className={`input ${icon && "input--hasIcon"}  `}
-        disabled={disabled}
-        type="text"
+        onChange={(e) => onChange(e.target.value)}
+        value={value}
+        id={name}
         placeholder={placeholder}
-      ></input>
+        className={`input input--${size} ${icon && "input--hasIcon"}`}
+        type="text"
+        disabled={disabled}
+      />
+      <div className="input__icon">{icon}</div>
     </div>
   );
 };
-
 export default Input;
